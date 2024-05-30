@@ -18,6 +18,10 @@ The main objective of this project is to create an "Intruder" application capabl
 - **WebSockets**: Employed for real-time communication between the web application and mobile devices.
 - **HTML & CSS**: Used for structuring the user interface and styling elements.
 
+## WebSockets alert
+- **To enable this feature, ensure that you have the socket-api running alongside this application.**
+- **Currently, the socket-api will notify you if an intruder appears.**
+
 ## Installation
 To run the application locally, follow these steps:
 1. Clone the repository to your local machine.
