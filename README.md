@@ -21,6 +21,7 @@ The main objective of this project is to create an "Intruder" application capabl
 ## WebSockets alert
 - **To enable this feature, ensure that you have the socket-api running alongside this application.**
 - **Currently, the socket-api will notify you if an intruder appears.**
+- **link**: - [socket-api](https://github.com/jdluis/socket-api/blob/master/README.md)
 
 ## Installation
 To run the application locally, follow these steps:
