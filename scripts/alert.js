@@ -1,3 +1,5 @@
+import SocketService from '../src/socket/socket.service';
+
 // alert.js
 export function downloadImage(imageSrc) {
     const anchor = document.createElement('a');
@@ -44,5 +46,14 @@ export function alertIntruder(video) {
     const intruderContainer = createClickableIntruderContainer(intruderImageSrc);
 
     showcase.appendChild(intruderContainer);
+
     // Enviar alerta al móvil (implementación pendiente)
+    // Inicializa el servicio de socket
+    const socketService = new SocketService();
+
+    // Ejemplo de cómo emitir un evento al servidor
+    socketService.emitClientEvent({ message: '¡¡Intruder!!' });
+
+    // Puedes agregar cualquier lógica adicional que necesites
+    console.log('Socket service initialized');
 }
