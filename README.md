@@ -10,7 +10,7 @@ The main objective of this project is to create an "Intruder" application capabl
 - **Live Webcam Feed**: The application provides a live webcam feed, allowing real-time detection and classification of objects.
 - **Intruder Detection**: Using machine learning models, the application can identify and highlight potential intruders in the webcam feed.
 - **Photo Capture**: Users have the option to capture photos of detected intruders, which can be downloaded for further analysis.
-- **Mobile Notification**: Upon detecting an intruder, the application sends a notification to a mobile device via WebSockets, providing instant alerts.
+- **Mobile Notification**: Upon detecting an intruder, the application sends a notification to a mobile device via WebSockets, providing instant alerts. FEAUTURE**
 
 ## Technologies Used
 - **JavaScript**: The core language for implementing the application logic.
