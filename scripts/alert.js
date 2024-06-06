@@ -34,26 +34,28 @@ export function createClickableIntruderContainer(imageSrc) {
 }
 
 export function alertIntruder(video) {
-    const showcase = document.getElementById("showcase");
+  const showcase = document.getElementById("showcase");
 
-    const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    const context = canvas.getContext("2d");
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  const canvas = document.createElement("canvas");
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const context = canvas.getContext("2d");
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const intruderImageSrc = canvas.toDataURL("image/png");
-    const intruderContainer = createClickableIntruderContainer(intruderImageSrc);
+  const intruderImageSrc = canvas.toDataURL("image/png");
+  const intruderContainer = createClickableIntruderContainer(intruderImageSrc);
 
-    showcase.appendChild(intruderContainer);
+  showcase.appendChild(intruderContainer);
 
-    // Enviar alerta al móvil (implementación pendiente)
-    // Inicializa el servicio de socket
-    const socketService = new SocketService();
+  // Init Socket server
+  const socketService = new SocketService();
 
-    // Ejemplo de cómo emitir un evento al servidor
-    socketService.emitClientEvent({ message: '¡¡Intruder!!' });
+  // Send msg to server
+  const messageData = {
+    userId: 'web-app',
+    message: '¡¡Intruder!!'
+  };
+  socketService.emitClientEvent(messageData);
 
-    // Puedes agregar cualquier lógica adicional que necesites
-    console.log('Socket service initialized');
+  console.log('Socket service initialized');
 }

@@ -2,12 +2,12 @@ import { io } from 'socket.io-client';
 
 class SocketService {
   constructor() {
-    this.socket = io('http://localhost:3000'); // Reemplaza con la URL de tu servidor
+    this.socket = io('http://localhost:3000'); 
     this.setupSocketEvents();
   }
 
   setupSocketEvents() {
-    // Escucha el evento 'messageToClient' del servidor
+    // Listen server
     this.socket.on('messageToClient', (data) => {
       const payload = JSON.stringify(data.payload)
       console.log(`Received serverEvent: ${payload}`);
@@ -15,10 +15,11 @@ class SocketService {
     });
   }
 
-  // Emite el evento 'messageToServer' al servidor
-  emitClientEvent(payload) {
-    this.socket.emit('messageToServer', { payload });
+  // Emit to Server
+  emitClientEvent(data) {
+    this.socket.emit('messageToServer', { payload: data });
   }
+  
 }
 
 export default SocketService;
